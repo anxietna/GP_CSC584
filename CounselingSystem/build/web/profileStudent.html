@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Profile | Counseling System</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #e9eef2;
+        display: flex;
+        min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 220px;
+        background-color: #003366;
+        color: white;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .sidebar h2 {
+        text-align: center;
+        margin: 0 0 20px 0;
+        font-size: 1.3em;
+    }
+    .sidebar a {
+        color: #d1e2f3;
+        text-decoration: none;
+        padding: 10px;
+        margin-bottom: 5px;
+        border-radius: 4px;
+        display: block;
+    }
+    .sidebar a:hover, .sidebar .active {
+        background-color: #0056b3;
+    }
+    .sidebar .user-info {
+        margin-top: auto;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+        font-size: 0.9em;
+    }
+    .sidebar .user-info a {
+        display: block;
+        margin-top: 10px;
+        background-color: #cc0000;
+        color: white;
+        text-align: center;
+        padding: 8px;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    /* Main content */
+    .main-content {
+        flex-grow: 1;
+        padding: 30px;
+    }
+
+    h1 {
+        color: #003366;
+        margin-bottom: 20px;
+    }
+
+    /* Profile Form */
+    .profile-form {
+        background: white;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        max-width: 500px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    label {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 5px;
+        color: #333;
+    }
+    input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #c7c7c7;
+        box-sizing: border-box;
+        transition: border-color 0.3s;
+    }
+    input:focus {
+        outline: none;
+        border-color: #0056b3;
+    }
+    button {
+        width: 100%;
+        padding: 12px;
+        background-color: #0056b3;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.25s;
+    }
+    button:hover {
+        background-color: #003f80;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Student Dashboard</h2>
+    <a href="dashboardStudent.html">Dashboard</a>
+    <a href="scheduleAppointment.html">Schedule Appointment</a>
+    <a href="viewAppointments.html">My Appointments</a>
+    <a href="#" class="active">Profile Student</a>
+
+    <div class="user-info">
+        <p>ID: S1001</p>
+        <p>Name: Maisara Mahmud</p>
+        <a href="index.html">Logout</a>
+    </div>
+</div>
+
+<div class="main-content">
+    <h1>My Profile</h1>
+
+    <div class="profile-form">
+        <form action="updateProfile.html" method="POST">
+            <div class="form-group">
+                <label for="studentID">Student ID</label>
+                <input type="text" id="studentID" name="studentID" value="S1001" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" value="Maisara Mahmud" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="maisara@student.uitm.edu.my" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" value="********" required>
+            </div>
+
+            <button type="submit">Update Profile</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

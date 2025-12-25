@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Profile | Counselor Dashboard</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #e9eef2;
+        display: flex;
+        min-height: 100vh;
+    }
+
+    /* --- Sidebar (Consistent with Dashboard) --- */
+    .sidebar {
+        width: 250px;
+        background-color: #003366;
+        color: white;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .sidebar h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 1.4em;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding-bottom: 15px;
+    }
+    .sidebar a {
+        color: #d1e2f3;
+        text-decoration: none;
+        padding: 10px 15px;
+        margin-bottom: 5px;
+        border-radius: 4px;
+        display: block;
+        transition: 0.2s;
+    }
+    .sidebar a:hover, .sidebar .active {
+        background-color: #0056b3;
+        color: white;
+    }
+    .sidebar .user-info {
+        margin-top: auto;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        font-size: 0.9em;
+    }
+    .sidebar .user-info a {
+        display: block;
+        margin-top: 10px;
+        background-color: #cc0000;
+        color: white;
+        text-align: center;
+        padding: 8px;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+    /* --- End Sidebar --- */
+
+    /* --- Main Content and Profile Styling --- */
+    .main-content {
+        flex-grow: 1;
+        padding: 40px;
+    }
+
+    h1 {
+        color: #003366;
+        margin-bottom: 30px;
+        font-size: 2.2em;
+    }
+
+    .profile-card {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        max-width: 800px;
+    }
+
+    .profile-card h2 {
+        color: #0056b3;
+        border-bottom: 2px solid #e9eef2;
+        padding-bottom: 10px;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    .profile-detail {
+        display: flex;
+        margin-bottom: 15px;
+        border-bottom: 1px dashed #eee;
+        padding-bottom: 10px;
+    }
+
+    .profile-detail:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+    .label {
+        font-weight: bold;
+        color: #555;
+        width: 180px;
+        flex-shrink: 0;
+    }
+
+    .value {
+        color: #333;
+        flex-grow: 1;
+    }
+
+    .actions {
+        margin-top: 30px;
+        text-align: right;
+    }
+
+    .btn-edit {
+        background-color: #28a745;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 1em;
+        transition: background-color 0.2s;
+    }
+
+    .btn-edit:hover {
+        background-color: #1e7e34;
+    }
+    /* --- End Main Content and Profile Styling --- */
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Counselor Dashboard</h2>
+    <a href="dashboardCounselor.html">Dashboard</a>
+    <a href="viewAppointmentsCounselor.html">Student Appointments</a>
+    <a href="studentList.html">Student List</a>
+    <a href="counselorProfile.html" class="active">My Profile</a>
+
+    <div class="user-info">
+        <p>ID: C2001</p>
+        <p>Name: Dr. Zulhelmie Ahmad</p>
+        <a href="index.html">Logout</a>
+    </div>
+</div>
+
+<div class="main-content">
+    <h1>Counselor Profile</h1>
+
+    <div class="profile-card">
+        <h2>Personal Information</h2>
+        
+        <div class="profile-detail">
+            <div class="label">Counselor ID:</div>
+            <div class="value">C2001</div>
+        </div>
+        <div class="profile-detail">
+            <div class="label">Name:</div>
+            <div class="value">Dr. Zulhelmie Ahmad</div>
+        </div>
+        <div class="profile-detail">
+            <div class="label">Email:</div>
+            <div class="value">zulhemieahmad89@uitm.edu.my</div>
+        </div>
+        <div class="profile-detail">
+            <div class="label">Phone:</div>
+            <div class="value">(+60)14 3456-7890</div>
+        </div>
+        
+        <h2>Professional Details</h2>
+
+        <div class="profile-detail">
+            <div class="label">Specialization:</div>
+            <div class="value">Academic Stress, Career Planning</div>
+        </div>
+        <div class="profile-detail">
+            <div class="label">Office Location:</div>
+            <div class="value">Student Services Building, Room 301</div>
+        </div>
+        <div class="profile-detail">
+            <div class="label">Years of Experience:</div>
+            <div class="value">8 Years</div>
+        </div>
+
+        <div class="actions">
+            <a href="#" class="btn-edit">Edit Profile</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

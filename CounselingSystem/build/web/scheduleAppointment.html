@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schedule Appointment | Counseling System</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #e9eef2;
+        display: flex;
+        min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 220px;
+        background-color: #003366;
+        color: white;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .sidebar h2 {
+        text-align: center;
+        margin: 0 0 20px 0;
+        font-size: 1.3em;
+    }
+    .sidebar a {
+        color: #d1e2f3;
+        text-decoration: none;
+        padding: 10px;
+        margin-bottom: 5px;
+        border-radius: 4px;
+        display: block;
+    }
+    .sidebar a:hover, .sidebar .active {
+        background-color: #0056b3;
+    }
+    .sidebar .user-info {
+        margin-top: auto;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+        font-size: 0.9em;
+    }
+    .sidebar .user-info a {
+        display: block;
+        margin-top: 10px;
+        background-color: #cc0000;
+        color: white;
+        text-align: center;
+        padding: 8px;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    /* Main content */
+    .main-content {
+        flex-grow: 1;
+        padding: 30px;
+    }
+    h1 {
+        color: #003366;
+        margin-bottom: 20px;
+    }
+
+    /* Form Styling */
+    .appointment-form {
+        background: white;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        max-width: 500px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    label {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 5px;
+        color: #333;
+    }
+    input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #c7c7c7;
+        box-sizing: border-box;
+        transition: border-color 0.3s;
+    }
+    input:focus, select:focus, textarea:focus {
+        outline: none;
+        border-color: #0056b3;
+    }
+    textarea {
+        resize: vertical;
+        min-height: 80px;
+    }
+    button {
+        width: 100%;
+        padding: 12px;
+        background-color: #0056b3;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.25s;
+    }
+    button:hover {
+        background-color: #003f80;
+    }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Student Dashboard</h2>
+    <a href="dashboardStudent.html">Dashboard</a>
+    <a href="#" class="active">Schedule Appointment</a>
+    <a href="viewAppointments.html">My Appointments</a>
+    <a href="profileStudent.html">Profile Student</a>
+
+    <div class="user-info">
+        <p>ID: S1001</p>
+        <p>Name: Maisara Mahmud</p>
+        <a href="index.html">Logout</a>
+    </div>
+</div>
+
+<div class="main-content">
+    <h1>Schedule a New Appointment</h1>
+
+    <div class="appointment-form">
+        <form action="submitAppointment.html" method="POST">
+            <div class="form-group">
+                <label for="counselor">Select Counselor:</label>
+                <select id="counselor" name="counselor" required>
+                    <option value="">--Choose--</option>
+                    <option value="Dr. Zulhelmie Ahmad">Dr. Zulhelmie Ahmad</option>
+                    <option value="Dr. Zuraida Ibrahim">Dr. Zuraida Ibrahim</option>
+                    <option value="Dr. Lily Zaid">Dr. Lily Zaid</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Select Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="time">Select Time:</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" placeholder="e.g., Room 301" required>
+            </div>
+
+            <div class="form-group">
+                <label for="reason">Reason for Appointment:</label>
+                <textarea id="reason" name="reason" placeholder="Explain why you want to book this session..." required></textarea>
+            </div>
+
+            <button type="submit">Book Appointment</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

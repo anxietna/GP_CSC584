@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View Appointments | Counselor Dashboard</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #e9eef2;
+        display: flex;
+        min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 250px; /* Matched dashboardCounselor.html width */
+        background-color: #003366;
+        color: white;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .sidebar h2 {
+        text-align: center;
+        margin-bottom: 30px; /* Matched dashboardCounselor.html margin */
+        font-size: 1.4em; /* Matched dashboardCounselor.html size */
+        border-bottom: 1px solid rgba(255,255,255,0.1); /* Matched dashboardCounselor.html border */
+        padding-bottom: 15px; /* Matched dashboardCounselor.html padding */
+    }
+    .sidebar a {
+        color: #d1e2f3;
+        text-decoration: none;
+        padding: 10px 15px; /* Matched dashboardCounselor.html padding */
+        margin-bottom: 5px;
+        border-radius: 4px;
+        display: block;
+        transition: 0.2s; /* Matched dashboardCounselor.html transition */
+    }
+    .sidebar a:hover, .sidebar .active {
+        background-color: #0056b3;
+        color: white; /* Added color for hover/active state */
+    }
+    .sidebar .user-info {
+        margin-top: auto;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255,255,255,0.1); /* Matched dashboardCounselor.html border alpha */
+        font-size: 0.9em;
+    }
+    .sidebar .user-info a {
+        display: block;
+        margin-top: 10px;
+        background-color: #cc0000;
+        color: white;
+        text-align: center;
+        padding: 8px;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    /* Main content */
+    .main-content {
+        flex-grow: 1;
+        padding: 30px;
+    }
+
+    h1 {
+        color: #003366;
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #0056b3;
+        color: white;
+    }
+
+    tr:hover {
+        background-color: #f1f6fb;
+    }
+
+    .status-upcoming {
+        color: #ff9900;
+        font-weight: bold;
+    }
+    .status-completed {
+        color: #28a745;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Counselor Dashboard</h2>
+    <a href="dashboardCounselor.html">Dashboard</a>
+<a href="viewAppointmentsCounselor.html" class="active">View Appointments</a>
+<a href="studentList.html">Student List</a>
+<a href="counselorProfile.html">My Profile</a>
+
+    <div class="user-info">
+        <p>ID: C1001</p>
+        <p>Name: Dr. Zulhelmie Ahmad</p>
+        <a href="index.html">Logout</a>
+    </div>
+</div>
+
+<div class="main-content">
+    <h1>Appointments from Students</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Location</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>S1001</td>
+                <td>Maisara Mahmud</td>
+                <td>2025-12-15</td>
+                <td>10:00 AM</td>
+                <td>Room 301</td>
+                <td class="status-upcoming">Upcoming</td>
+            </tr>
+            <tr>
+                <td>S1002</td>
+                <td>Amalina Razali</td>
+                <td>2025-12-10</td>
+                <td>2:00 PM</td>
+                <td>Room 302</td>
+                <td class="status-completed">Completed</td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Feedback | Counseling Appointment System</title>
+    <style>
+        /* General Styling for Consistency */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e9eef2;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Form Container */
+        .feedback-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        h1 {
+            color: #003366;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+        }
+        h2 {
+            color: #555;
+            font-weight: 400;
+            font-size: 1.1em;
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Rating Stars */
+        .rating-group {
+            display: flex;
+            justify-content: space-around;
+            font-size: 2em;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        .rating-group input[type="radio"] {
+            display: none;
+        }
+        .star-label {
+            color: #ccc; /* Default color: grey */
+            transition: color 0.2s;
+        }
+        .star-label:hover,
+        .star-label:hover ~ .star-label {
+            color: #ffc107; /* Yellow on hover */
+        }
+        .rating-group input[type="radio"]:checked ~ .star-label {
+            color: #ffc107; /* Yellow for checked stars and stars to the left */
+        }
+
+        /* Submit Button */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #003366;
+        }
+        .back-link {
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+        .back-link a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        function getAppointmentId() {
+            // Simulated retrieval of Appointment ID from the URL (e.g., ?id=A1005)
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id') || 'AXXXX'; 
+            document.getElementById('appointmentIdDisplay').textContent = id;
+            document.getElementById('appointmentID').value = id;
+        }
+        
+        function handleSubmit(event) {
+            event.preventDefault(); // Stop actual form submission for static HTML
+            
+            // In a real application, you would send the data to a Servlet (e.g., FeedbackServlet)
+            
+            alert("Thank you for your feedback! Your submission for Appointment " + document.getElementById('appointmentID').value + " has been recorded.");
+            
+            // Redirect back to the dashboard after simulated success
+            window.location.href = "dashboardStudent.html"; 
+        }
+
+        window.onload = getAppointmentId;
+    </script>
+</head>
+<body>
+
+    <div class="feedback-container">
+        <h1>Appointment Feedback</h1>
+        <h2>Reviewing Appointment ID: <span id="appointmentIdDisplay">AXXXX</span></h2>
+        
+        <form action="FeedbackServlet" method="POST" onsubmit="return handleSubmit(event)">
+            <input type="hidden" name="action" value="create">
+            <input type="hidden" id="appointmentID" name="appointmentID" value="">
+            
+            <div class="form-group">
+                <label>Overall Rating (1 = Poor, 5 = Excellent):</label>
+                <div class="rating-group" dir="rtl">
+                    <input type="radio" id="star5" name="rating" value="5" required>
+                    <label for="star5" class="star-label">★</label>
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4" class="star-label">★</label>
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3" class="star-label">★</label>
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2" class="star-label">★</label>
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1" class="star-label">★</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="comments">Comments and Suggestions (Optional):</label>
+                <textarea id="comments" name="comments" maxlength="500" placeholder="Share your experience..."></textarea>
+            </div>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+        
+        <div class="back-link">
+            <a href="dashboardStudent.html">Back to Dashboard</a>
+        </div>
+    </div>
+
+</body>
+</html>
