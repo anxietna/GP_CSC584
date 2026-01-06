@@ -1,9 +1,9 @@
+import counseling.bean.AppointmentBean;
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
-import counseling.bean.AppointmentBean;
 import javax.servlet.annotation.WebServlet;
 
 @WebServlet("/ViewAppointmentsServlet")

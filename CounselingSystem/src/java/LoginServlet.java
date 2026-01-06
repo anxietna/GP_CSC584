@@ -1,10 +1,10 @@
+import counseling.bean.CounselorBean;
+import counseling.bean.StudentBean;
 import java.io.IOException;
 import java.sql.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.WebServlet;
-import counseling.bean.StudentBean;
-import counseling.bean.CounselorBean;
 
 @WebServlet("/LoginServlet")
 

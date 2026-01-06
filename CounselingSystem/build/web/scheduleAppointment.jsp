@@ -43,7 +43,8 @@
         <a href="DashboardStudentServlet">Dashboard</a>
         <a href="#" class="active">Schedule Appointment</a>
         <a href="ViewAppointmentsServlet">My Appointments</a>
-        <a href="profileStudent.jsp">Profile Student</a>
+        <a href="ProfileStudentServlet">Profile Student</a>
+        <a href="SubmitFeedbackServlet">Feedback</a>
 
         <div class="user-info">
             <p>ID: <%= userID %></p>

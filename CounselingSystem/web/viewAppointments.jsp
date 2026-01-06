@@ -74,7 +74,8 @@
     <a href="dashboardStudent.jsp">Dashboard</a>
     <a href="scheduleAppointment.jsp">Schedule Appointment</a>
     <a href="#" class="active">My Appointments</a>
-    <a href="profileStudent.jsp">Profile Student</a>
+    <a href="ProfileStudentServlet">Profile Student</a>
+    <a href="SubmitFeedbackServlet">Feedback</a>
 
     <div class="user-info">
         <p>ID: <%= studentID %></p>

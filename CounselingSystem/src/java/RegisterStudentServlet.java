@@ -1,9 +1,9 @@
+import counseling.bean.StudentBean;
 import java.io.*;
 import java.sql.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.WebServlet;
-import counseling.bean.StudentBean;
 
 @WebServlet("/RegisterStudentServlet")
 

@@ -4,7 +4,6 @@ import java.util.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
-import counseling.bean.AppointmentBean;
 
 @WebServlet("/ScheduleAppointmentServlet")
 public class ScheduleAppointmentServlet extends HttpServlet {
